@@ -1,2 +1,3 @@
 make
-./a.out < tests/test_assignment_basic1.txt
+
+valgrind ./a.out < tests/test_assignment_basic2.txt

@@ -20,6 +20,8 @@ SymbolTable::SymbolTable(std::vector<std::string> variables)
 SymbolTable::~SymbolTable()
 {
     free(keys);
+    free(memOffsets);
+    free(isAllocated);
 }
 
 
@@ -62,10 +64,12 @@ Program::Program()
     program = NULL;
     head = NULL;
 }
+
 Program::~Program()
 {
-
+    delete symbols;
 }
+
 void Program::insertInstruction(struct InstructionNode * i)
 {
     i->next = NULL;
