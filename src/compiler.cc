@@ -10,6 +10,7 @@
 #include <cstring>
 #include <string>
 #include "compiler.h"
+#include <iostream>
 
 using namespace std;
 
@@ -32,8 +33,9 @@ void debug(const char* format, ...)
     }
 }
 
+
 void execute_program(struct InstructionNode * program)
-{
+{ 
     struct InstructionNode * pc = program;
     int op1, op2, result;
 
@@ -137,5 +139,6 @@ int main()
     struct InstructionNode * program;
     program = parse_generate_intermediate_representation();
     execute_program(program);
+    
     return 0;
 }
